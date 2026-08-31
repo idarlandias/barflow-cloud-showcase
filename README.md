@@ -34,32 +34,32 @@
   <tr>
     <td width="50%" align="center">
       <b>📱 Cardápio Digital (PWA Cliente)</b><br/>
-      <sub>Seleção rápida, opcionais customizados e checkout ágil</sub><br/><br/>
+      <sub>Seleção rápida, adicionais customizados e checkout ágil</sub><br/><br/>
       <img src="docs/screenshots/cardapio.jpeg" alt="Cardápio Digital PWA" width="100%" />
     </td>
     <td width="50%" align="center">
-      <b>🧑‍🍳 KDS Cozinha (Tempo Real)</b><br/>
-      <sub>Esteira dinâmica de preparo com separação de bebidas/cozinha</sub><br/><br/>
-      <img src="docs/screenshots/kds.jpeg" alt="KDS Cozinha em Tempo Real" width="100%" />
+      <b>🔔 KDS Cozinha (Novo Pedido Chegando)</b><br/>
+      <sub>Alerta instantâneo em tempo real e esteira de preparo ativa</sub><br/><br/>
+      <img src="docs/screenshots/pedido-chegando.jpeg" alt="KDS Cozinha - Pedido Chegando" width="100%" />
     </td>
   </tr>
   <tr>
+    <td width="50%" align="center">
+      <b>✅ KDS Cozinha (Pedidos Finalizados / Histórico)</b><br/>
+      <sub>Acompanhamento de pedidos prontos e tempo de atendimento</sub><br/><br/>
+      <img src="docs/screenshots/kds.jpeg" alt="KDS Cozinha - Pedidos Prontos" width="100%" />
+    </td>
     <td width="50%" align="center">
       <b>🤵 Painel do Garçom / Mesas</b><br/>
       <sub>Lançamento rápido por mesa, comanda e segurança por senha</sub><br/><br/>
       <img src="docs/screenshots/painel-garcom.jpeg" alt="Painel do Garçom" width="100%" />
     </td>
+  </tr>
+  <tr>
     <td width="50%" align="center">
       <b>💰 Controle & Fechamento de Caixa</b><br/>
       <sub>Abertura com troco, sangrias, suprimentos e conferência do dia</sub><br/><br/>
       <img src="docs/screenshots/caixa.jpeg" alt="Controle de Caixa" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <b>📈 Painel de Analytics & Faturamento</b><br/>
-      <sub>Visão de faturamento, ticket médio e formas de pagamento</sub><br/><br/>
-      <img src="docs/screenshots/analytics.jpeg" alt="Painel de Analytics" width="100%" />
     </td>
     <td width="50%" align="center">
       <b>📦 Gestão de Estoque</b><br/>
@@ -69,14 +69,26 @@
   </tr>
   <tr>
     <td width="50%" align="center">
+      <b>📈 Painel de Analytics & Faturamento</b><br/>
+      <sub>Visão de faturamento diário, ticket médio e formas de pagamento</sub><br/><br/>
+      <img src="docs/screenshots/analytics.jpeg" alt="Painel de Analytics" width="100%" />
+    </td>
+    <td width="50%" align="center">
       <b>👥 Gestão de Equipe & Permissões</b><br/>
       <sub>Controle de acessos e papéis operacionais (garçom, gerente, dono)</sub><br/><br/>
       <img src="docs/screenshots/equipe.jpeg" alt="Gestão de Equipe" width="100%" />
     </td>
+  </tr>
+  <tr>
     <td width="50%" align="center">
-      <b>🔐 Autenticação & Acesso Seguro</b><br/>
-      <sub>Login isolado por tenant com rate-limit e proteção contra força bruta</sub><br/><br/>
+      <b>🔐 Login Administrativo Multi-Tenant</b><br/>
+      <sub>Acesso isolado por tenant com rate-limit e proteção contra força bruta</sub><br/><br/>
       <img src="docs/screenshots/login-administrador.jpeg" alt="Login Administrador" width="100%" />
+    </td>
+    <td width="50%" align="center">
+      <b>🔑 Acesso do Garçom / Operação</b><br/>
+      <sub>Login rápido para garçons e operadores de salão</sub><br/><br/>
+      <img src="docs/screenshots/login-garcom.jpeg" alt="Login Garçom" width="100%" />
     </td>
   </tr>
 </table>
