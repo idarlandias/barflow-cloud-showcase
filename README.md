@@ -11,7 +11,7 @@
 [![Status](https://img.shields.io/badge/Status-Em%20Produção%20Real-success?style=for-the-badge)]()
 
 <p align="center">
-  Cardápio digital PWA • Comanda mobile do garçom • KDS de cozinha em tempo real • Fechamento contábil de caixa • Analytics & SuperAdmin
+  Cardápio digital PWA • Comanda mobile do garçom • KDS de cozinha em tempo real • Fechamento contábil de caixa • Controle de estoque • Analytics & SuperAdmin
 </p>
 
 ---
@@ -25,6 +25,61 @@
 
 > [!NOTE]
 > **Sobre este repositório:** Esta é uma **vitrine técnica curada** (case study + trechos de código representativos). O código-fonte integral é mantido privado por conter regras de negócio e dados operacionais de clientes em produção.
+
+---
+
+## 📸 Galeria de Telas da Aplicação em Produção
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <b>📱 Cardápio Digital (PWA Cliente)</b><br/>
+      <sub>Seleção rápida, opcionais customizados e checkout ágil</sub><br/><br/>
+      <img src="docs/screenshots/cardapio.jpeg" alt="Cardápio Digital PWA" width="100%" />
+    </td>
+    <td width="50%" align="center">
+      <b>🧑‍🍳 KDS Cozinha (Tempo Real)</b><br/>
+      <sub>Esteira dinâmica de preparo com separação de bebidas/cozinha</sub><br/><br/>
+      <img src="docs/screenshots/kds.jpeg" alt="KDS Cozinha em Tempo Real" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <b>🤵 Painel do Garçom / Mesas</b><br/>
+      <sub>Lançamento rápido por mesa, comanda e segurança por senha</sub><br/><br/>
+      <img src="docs/screenshots/painel-garcom.jpeg" alt="Painel do Garçom" width="100%" />
+    </td>
+    <td width="50%" align="center">
+      <b>💰 Controle & Fechamento de Caixa</b><br/>
+      <sub>Abertura com troco, sangrias, suprimentos e conferência do dia</sub><br/><br/>
+      <img src="docs/screenshots/caixa.jpeg" alt="Controle de Caixa" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <b>📈 Painel de Analytics & Faturamento</b><br/>
+      <sub>Visão de faturamento, ticket médio e formas de pagamento</sub><br/><br/>
+      <img src="docs/screenshots/analytics.jpeg" alt="Painel de Analytics" width="100%" />
+    </td>
+    <td width="50%" align="center">
+      <b>📦 Gestão de Estoque</b><br/>
+      <sub>Controle de insumos, alertas de estoque baixo e movimentações</sub><br/><br/>
+      <img src="docs/screenshots/estoque.jpeg" alt="Gestão de Estoque" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <b>👥 Gestão de Equipe & Permissões</b><br/>
+      <sub>Controle de acessos e papéis operacionais (garçom, gerente, dono)</sub><br/><br/>
+      <img src="docs/screenshots/equipe.jpeg" alt="Gestão de Equipe" width="100%" />
+    </td>
+    <td width="50%" align="center">
+      <b>🔐 Autenticação & Acesso Seguro</b><br/>
+      <sub>Login isolado por tenant com rate-limit e proteção contra força bruta</sub><br/><br/>
+      <img src="docs/screenshots/login-administrador.jpeg" alt="Login Administrador" width="100%" />
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -71,7 +126,7 @@ flowchart TD
 
     subgraph Loja["🏪 Operação do Estabelecimento"]
         B["App do Garçom<br/><i>(Mobile / Lançamento de mesa)</i>"]:::store
-        C["Painel Operacional<br/><i>(KDS Cozinha + Caixa + Analytics)</i>"]:::store
+        C["Painel Operacional<br/><i>(KDS Cozinha + Caixa + Estoque + Analytics)</i>"]:::store
     end
 
     subgraph Cloud["☁️ Google Cloud Platform"]
@@ -87,7 +142,7 @@ flowchart TD
 
     A -->|Pedido e Pagamento| D
     B -->|Comanda em Tempo Real| D
-    C -->|Fila KDS e Caixa| D
+    C -->|Fila KDS, Estoque e Caixa| D
     D -->|Consultas Multi-Tenant| E
     D -->|Upload / Consulta| F
     D -.->|Auth / Config| G
@@ -117,6 +172,8 @@ Um único serviço Node.js (servidor HTTP nativo, sem Express) atende três fron
 - 🤵 **App do Garçom (Mobile-First):** Lançamento de pedidos direto na mesa com controle de comanda e exigência de senha de gerente para cancelamentos e estornos.
 - 🧑‍🍳 **KDS (Kitchen Display System) em Tempo Real:** Fila inteligente que direciona pedidos para a cozinha assim que confirmados, com separação automática de itens que não exigem preparo (bebidas).
 - 💰 **Controle Contábil de Caixa:** Abertura com troco inicial, suprimento, sangria, fechamento com conferência e trava no banco contra dupla abertura no mesmo dia de operação.
+- 📦 **Gestão de Estoque:** Controle de disponibilidade de itens do cardápio em tempo real e monitoramento de consumo.
+- 👥 **Gestão de Equipe & Permissões:** Controle granular de funções operacionais (administrador, gerente, garçom, atendente).
 - 🔍 **"Meus Pedidos":** Login simplificado apenas com o número de telefone (sem fricção de senha) para histórico de pedidos e recurso "pedir de novo".
 - 📈 **Painel de Analytics:** Monitoramento de faturamento, ticket médio, ranking de produtos mais vendidos e distribuição por método de pagamento.
 - 👑 **Painel SuperAdmin:** Gestão consolidada de todas as lojas contratantes, controle de MRR e bloqueio automático por inadimplência.
