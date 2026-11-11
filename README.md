@@ -1,278 +1,167 @@
 <div align="center">
 
-# 🔥 BarFlow Cloud
-### *SaaS Multi-Tenant de Gestão Operacional para Bares e Restaurantes*
+<img src="docs/screenshots/barflow_perfil_avatar.jpeg" alt="BarFlow" width="120" />
 
-[![Node.js](https://img.shields.io/badge/Node.js-HTTP%20Nativo-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Cloud%20SQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Google Cloud](https://img.shields.io/badge/Google_Cloud-Cloud_Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://cloud.google.com/)
-[![Docker](https://img.shields.io/badge/Docker-Containers-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Tests](https://img.shields.io/badge/Tests-54%20Passing%20(node%3Atest)-brightgreen?style=for-the-badge)](excerpts/multiTenantIsolation.test.js)
-[![Status](https://img.shields.io/badge/Status-Em%20Produção%20Real-success?style=for-the-badge)]()
+# BarFlow Cloud
 
-<p align="center">
-  Cardápio digital PWA • Comanda mobile do garçom • KDS de cozinha em tempo real • Fechamento contábil de caixa • Controle de estoque • Analytics & SuperAdmin
-</p>
+**Plataforma SaaS multi-tenant de gestão para pequenos negócios: bar e restaurante, salão e barbearia, loja de varejo.**
 
----
-
-### ⏱️ **Do zero à produção real em 3 dias** (28 a 30 de agosto de 2026)
-*Construído sozinho e operando com cliente pagante real e fluxo financeiro diário ativo.*
+[![Node.js](https://img.shields.io/badge/Node.js-http%20nativo-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Cloud%20SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Google Cloud Run](https://img.shields.io/badge/Google%20Cloud-Cloud%20Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white)](https://cloud.google.com/run)
+[![Testes](https://img.shields.io/badge/testes-~4.350%20(node%3Atest)-brightgreen?style=flat-square)](#números-verificáveis)
+[![Status](https://img.shields.io/badge/status-em%20produção-success?style=flat-square)](#)
 
 </div>
-
-<br/>
 
 > [!NOTE]
-> **Sobre este repositório:** Esta é uma **vitrine técnica curada** (case study + trechos de código representativos). O código-fonte integral é mantido privado por conter regras de negócio e dados operacionais de clientes em produção.
+> **Sobre este repositório:** é uma **vitrine técnica curada** — descrição do produto, decisões de arquitetura e trechos de código representativos. O código-fonte completo é privado porque atende lojas reais em produção. Nenhum dado de cliente aparece aqui.
 
 ---
 
-## 📸 Galeria de Telas da Aplicação em Produção
+## Visão geral do ecossistema
 
-<table>
-  <tr>
-    <td width="50%" align="center">
-      <b>📱 Cardápio Digital (PWA Cliente)</b><br/>
-      <sub>Seleção rápida, adicionais customizados e checkout ágil</sub><br/><br/>
-      <img src="docs/screenshots/cardapio.jpeg" alt="Cardápio Digital PWA" width="100%" />
-    </td>
-    <td width="50%" align="center">
-      <b>🔔 KDS Cozinha (Novo Pedido Chegando)</b><br/>
-      <sub>Alerta instantâneo em tempo real e esteira de preparo ativa</sub><br/><br/>
-      <img src="docs/screenshots/pedido-chegando.jpeg" alt="KDS Cozinha - Pedido Chegando" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <b>✅ KDS Cozinha (Pedidos Finalizados / Histórico)</b><br/>
-      <sub>Acompanhamento de pedidos prontos e tempo de atendimento</sub><br/><br/>
-      <img src="docs/screenshots/kds.jpeg" alt="KDS Cozinha - Pedidos Prontos" width="100%" />
-    </td>
-    <td width="50%" align="center">
-      <b>🤵 Painel do Garçom / Mesas</b><br/>
-      <sub>Lançamento rápido por mesa, comanda e segurança por senha</sub><br/><br/>
-      <img src="docs/screenshots/painel-garcom.jpeg" alt="Painel do Garçom" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <b>💰 Controle & Fechamento de Caixa</b><br/>
-      <sub>Abertura com troco, sangrias, suprimentos e conferência do dia</sub><br/><br/>
-      <img src="docs/screenshots/caixa.jpeg" alt="Controle de Caixa" width="100%" />
-    </td>
-    <td width="50%" align="center">
-      <b>📦 Gestão de Estoque</b><br/>
-      <sub>Controle de insumos, alertas de estoque baixo e movimentações</sub><br/><br/>
-      <img src="docs/screenshots/estoque.jpeg" alt="Gestão de Estoque" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <b>📈 Painel de Analytics & Faturamento</b><br/>
-      <sub>Visão de faturamento diário, ticket médio e formas de pagamento</sub><br/><br/>
-      <img src="docs/screenshots/analytics.jpeg" alt="Painel de Analytics" width="100%" />
-    </td>
-    <td width="50%" align="center">
-      <b>👥 Gestão de Equipe & Permissões</b><br/>
-      <sub>Controle de acessos e papéis operacionais (garçom, gerente, dono)</sub><br/><br/>
-      <img src="docs/screenshots/equipe.jpeg" alt="Gestão de Equipe" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <b>🔐 Login Administrativo Multi-Tenant</b><br/>
-      <sub>Acesso isolado por tenant com rate-limit e proteção contra força bruta</sub><br/><br/>
-      <img src="docs/screenshots/login-administrador.jpeg" alt="Login Administrador" width="100%" />
-    </td>
-    <td width="50%" align="center">
-      <b>🔑 Acesso do Garçom / Operação</b><br/>
-      <sub>Login rápido para garçons e operadores de salão</sub><br/><br/>
-      <img src="docs/screenshots/login-garcom.jpeg" alt="Login Garçom" width="100%" />
-    </td>
-  </tr>
-</table>
+Começou em agosto de 2026 como um sistema de bar construído em poucos dias para um primeiro cliente pagante. Desde então virou uma plataforma com **três frentes de produto sobre o mesmo núcleo**: um servidor Node.js, um banco PostgreSQL e isolamento por loja (`loja_id`) em toda consulta.
 
----
-
-## 📊 Métricas & Destaques de Engenharia
-
-| Métrica | Valor | Detalhes |
+| Frente | Para quem | O que resolve |
 |---|---|---|
-| ⏱️ **Tempo de Construção** | **3 dias** | Do primeiro commit ao primeiro pedido pago em produção |
-| 🛡️ **Multi-Tenancy** | **100% Isolado** | Isolamento por `loja_id` validado com testes de ataque simulado |
-| ⚡ **Stack Zero-Bloat** | **HTTP Nativo** | Sem Express/Fastify — imagens Docker leves e cold start instantâneo |
-| 🧪 **Cobertura de Testes** | **54 testes nativos** | Executados via `node --test` contra PostgreSQL descartável (Docker) |
-| 💰 **Validação** | **Cliente Real** | Restaurante em operação comercial diária com dinheiro real no caixa |
+| **[BarFlow](docs/barflow.md)** | Bar, restaurante, lanchonete, hamburgueria, pizzaria, açaiteria, confeitaria | Cardápio digital e QR de mesa, comanda do garçom, cozinha (KDS), caixa, estoque com ficha técnica, gestão financeira. Inclui o **ConfeiteiraFlow** (confeitaria por encomenda) e o marketplace **Tô com Fome** |
+| **[BeautyFlow](docs/beautyflow.md)** | Salão de beleza, barbearia, manicure | Agenda online em que o cliente marca sozinho, painel do dia e financeiro do salão |
+| **[FlowPDV](docs/flowpdv.md)** | Loja de varejo e loja de celular | Frente de caixa (PDV), produtos com variação e código de barras, estoque com custo médio, relatórios, gestão (DRE/CMV/curva ABC) e emissão fiscal **em homologação** |
 
----
-
-## 🧭 O Problema vs. A Solução
-
-```
-  ❌ CENÁRIO TRADICIONAL                    ✅ COM BARFLOW CLOUD
-┌──────────────────────────────┐        ┌───────────────────────────────────┐
-│ • Comandas de papel perdidas │        │ • Cardápio PWA rápido no celular  │
-│ • Pedidos via WhatsApp soltos│  ───▶  │ • Garçom lança direto na mesa    │
-│ • Cozinha desorganizada      │        │ • KDS em tempo real na cozinha    │
-│ • Caixa não bate no fim do dia│       │ • Caixa blindado com dia de corte │
-└──────────────────────────────┘        └───────────────────────────────────┘
-```
-
-Bares e restaurantes pequenos no Brasil costumam operar com anotações em papel, WhatsApp e planilhas — ou pagam caro por sistemas legados e engessados. O **BarFlow Cloud** funciona como o sistema operacional central da loja física: o cliente pede pelo celular, o garçom lança na mesa, a cozinha visualiza a esteira em tempo real e o dono fecha o caixa com precisão contábil.
-
----
-
-## 🏗️ Arquitetura do Sistema
+Cada frente abre no próprio endereço, com marca e telas próprias, mas compartilha autenticação, permissões, motor de relatórios e gestão, impressão, push e a infraestrutura.
 
 ```mermaid
-flowchart TD
-    classDef client fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1;
-    classDef store fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100;
-    classDef gcp fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20;
-    classDef external fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f;
-
-    subgraph Cliente["📱 Cliente Final"]
-        A["Cardápio Digital PWA<br/><i>(Mobile-first, sem framework)</i>"]:::client
+flowchart LR
+    subgraph Publico["Público (sem login)"]
+        A["Cardápio digital / QR da mesa"]
+        B["Marketplace por cidade"]
+        C["Agenda online do salão"]
+        D["Link de vendas da loja"]
     end
-
-    subgraph Loja["🏪 Operação do Estabelecimento"]
-        B["App do Garçom<br/><i>(Mobile / Lançamento de mesa)</i>"]:::store
-        C["Painel Operacional<br/><i>(KDS Cozinha + Caixa + Estoque + Analytics)</i>"]:::store
+    subgraph Operacao["Operação da loja"]
+        E["Painel do lojista"]
+        F["App do garçom"]
+        G["KDS da cozinha"]
+        H["PDV em tela cheia"]
+        I["Agente de impressão (ESC/POS)"]
     end
-
-    subgraph Cloud["☁️ Google Cloud Platform"]
-        D["Cloud Run<br/><b>Node.js HTTP Nativo</b>"]:::gcp
-        E[("Cloud SQL<br/><b>PostgreSQL</b>")]:::gcp
-        F["Cloud Storage<br/><i>(Fotos e Mídia)</i>"]:::gcp
-        G["Secret Manager<br/><i>(Credenciais e Secrets)</i>"]:::gcp
+    subgraph Nuvem["Google Cloud"]
+        S["Cloud Run<br/>Node.js http nativo"]
+        DB[("Cloud SQL<br/>PostgreSQL<br/>isolado por loja_id")]
+        ST["Cloud Storage<br/>fotos"]
+        FX["API fiscal<br/>(serviço separado)"]
     end
-
-    subgraph Externo["💬 Mensageria"]
-        H["WhatsApp Web / API"]:::external
-    end
-
-    A -->|Pedido e Pagamento| D
-    B -->|Comanda em Tempo Real| D
-    C -->|Fila KDS, Estoque e Caixa| D
-    D -->|Consultas Multi-Tenant| E
-    D -->|Upload / Consulta| F
-    D -.->|Auth / Config| G
-    A -.->|Confirmação de Pedido| H
+    A & B & C & D --> S
+    E & F & G & H --> S
+    I <--> S
+    S --> DB
+    S --> ST
+    S -. "só lojas habilitadas" .-> FX
 ```
-
-Um único serviço Node.js (servidor HTTP nativo, sem Express) atende três frontends diferentes — cardápio público, app do garçom e painel do lojista — todos multi-tenant sobre a mesma base PostgreSQL, isolados por `loja_id` em toda consulta.
 
 ---
 
-## 🛠️ Stack & Decisões Técnicas
+## BarFlow — bar, restaurante e confeitaria
 
-| Camada | Tecnologia | Motivação & Decisão de Engenharia |
+Resumo (detalhes em [docs/barflow.md](docs/barflow.md)):
+
+- **Cardápio digital público** com QR por mesa, fotos, adicionais com limite por tamanho, pizza meio a meio (cobra pelo sabor mais caro), promoções (de/por, combo, brinde, agendamento), horário de funcionamento por dia e pausa de item.
+- **Comanda e mesas:** app do garçom no celular, mapa de mesas, pagamento parcial, transferência e junção de contas, taxa de serviço, proteção contra toque duplo. Totens de autoatendimento ativados por código de uso único.
+- **KDS (cozinha):** fila em tempo real com cronômetro por pedido e alerta de atraso; bebidas que não passam pela cozinha ficam fora da tela.
+- **Caixa:** abertura com troco, sangria e suprimento com autor, fechamento com conferência, relatório Z, desconto de balcão, correção de forma de pagamento — com "dia operacional" calculado no servidor para bar que fecha de madrugada.
+- **Estoque com ficha técnica:** baixa automática a cada venda e estorno no cancelamento, custo PEPS, porções/fatias, entrada por XML de NF-e de compra e leitura de cupom por foto com IA de visão.
+- **Gestão (BI):** DRE gerencial, CMV, margem de contribuição, ponto de equilíbrio, custos fixos × variáveis, previsão do mês, curva ABC, mapa de calor dia × hora, reajuste de preço sugerido e relatório A4.
+- **Financeiro:** agenda de despesas com contas recorrentes, vale de funcionário, fornecedores, CSV para o contador.
+- **Entrega:** taxa por bairro, cadastro de entregadores e acerto no fechamento.
+- **ConfeiteiraFlow:** encomendas com data de entrega, sinal e acompanhamento pelo cliente; caixa rápido para feiras; receitas com custo por fatia.
+- **Tô com Fome:** vitrine pública por cidade reunindo as lojas da plataforma, com cupons (primeiro pedido, frete grátis, cliente que volta). Sem comissão e sem intermediar pagamento: o pedido cai direto no painel da loja.
+- **Assistente de suporte:** responde dúvidas do lojista a partir dos manuais oficiais (busca BM25 + resumo opcional por LLM, com checagem contra alucinação). A parte de IA é ligada por configuração.
+
+## BeautyFlow — salão e barbearia
+
+Resumo (detalhes em [docs/beautyflow.md](docs/beautyflow.md)):
+
+- **Agenda pública:** o cliente escolhe serviço, profissional (ou "qualquer um"), dia e horário livre; depois confirma pelo WhatsApp, adiciona ao Google Agenda ou cancela por link próprio.
+- **Sem horário duplicado:** trava por loja dentro da transação + constraint de exclusão no banco ([trecho](excerpts/agendamentoSemConflito.js)).
+- **Painel do dia:** concluído / faltou / cancelar, encaixe de quem chegou na hora, horários da semana, serviços com foto.
+- **Financeiro do salão:** faturamento, ticket médio, taxa de falta e ranking de serviços.
+- Sinal via Pix é **informativo** (gera o copia-e-cola; não há gateway confirmando pagamento). Comissão e lembrete automático ainda não existem.
+
+## FlowPDV — loja de varejo
+
+Resumo (detalhes em [docs/flowpdv.md](docs/flowpdv.md)):
+
+- **PDV em tela cheia** com atalhos F1–F12, leitor de código de barras, venda dividida em várias formas (dinheiro, Pix, débito, crédito à vista e parcelado, a prazo), orçamento que vira venda, CPF na nota, vendedor.
+- **Produtos** com variações (preço e estoque próprios), código de barras único por loja, SKU, venda fracionada (kg, m, L), markup a partir do custo, etiquetas de gôndola EAN-13, importação por planilha .xlsx/.csv.
+- **Estoque** com kardex (motivo e autor de cada movimento) e custo médio ponderado; entrada pelo XML da nota de compra.
+- **Fiado, comissão de vendedor, devoluções, encomendas, financeiro e relatório do contador.**
+- **12 relatórios** (curva ABC, produtos parados, margem baixa, estoque e reposição, horário de pico…) com exportação CSV.
+- **Gestão:** DRE gerencial, CMV pelo custo médio, margem de contribuição e três pontos de equilíbrio — o mesmo motor de BI do BarFlow.
+- **Importação de histórico de vendas de outro PDV** (CSV), com prévia antes de gravar, em tabelas próprias que nunca viram venda, caixa ou estoque — recém-concluída.
+- **Fiscal (NFC-e modelo 65 e NF-e modelo 55):** implementado, **em homologação** e ligado loja a loja. Detalhes e limites em [docs/flowpdv.md](docs/flowpdv.md#fiscal).
+
+---
+
+## Arquitetura
+
+Detalhes em [docs/arquitetura.md](docs/arquitetura.md).
+
+| Decisão | Como é feito | Por quê |
 |---|---|---|
-| **Backend** | **Node.js (`http` nativo)** | Zero dependências pesadas; cold start instantâneo no Cloud Run e imagem Docker ultra-reduzida. |
-| **Banco de Dados** | **PostgreSQL (Google Cloud SQL)** | Consistência ACID rigorosa para fechamento de caixa, transações e queries relacionais seguras. |
-| **Frontend** | **Vanilla JS (PWA Mobile-First)** | Performance máxima em redes móveis 3G/4G, sem overhead de bundles pesados (React/Vue). |
-| **Infraestrutura** | **Google Cloud Platform** | Serverless elástico com Cloud Run, Cloud Storage, Secret Manager e Artifact Registry. |
-| **Testes** | **`node:test` + Test Containers** | Execução rápida de 54 testes sem Jest/Mocha, usando instâncias isoladas de PostgreSQL no Docker. |
-| **Deploy** | **Docker + Cloud Run** | Pipeline de deploy automatizado via `gcloud` com zero downtime. |
+| **Servidor** | Node.js com o módulo `http` nativo, sem Express | Menos dependências, imagem pequena, inicialização rápida no Cloud Run. São 4 dependências de produção |
+| **Banco** | PostgreSQL (`pg`) com SQL escrito à mão | Dinheiro e estoque precisam de transação, trava de linha e constraint de verdade |
+| **Multi-tenant** | Banco único, `loja_id` em toda tabela e toda consulta | Testes de ataque fazem login na loja A e tentam ler/alterar dados da loja B ([trecho](excerpts/multiTenantIsolation.test.js)) |
+| **Concorrência** | `SELECT ... FOR UPDATE` na linha da loja dentro da transação | Serializa operações sensíveis por loja (agenda, caixa, mesa) sem travar as outras lojas |
+| **Migrations** | Arquivos SQL idempotentes que rodam a cada boot, com ledger | Deploy sem passo manual; a revisão anterior continua subindo sobre o mesmo banco, o que mantém o rollback simples |
+| **Invariantes** | Consultas somente leitura que conferem o estado acumulado (ex.: total da conta = soma das linhas) | Teste prova o código; invariante prova o dado ([trecho](excerpts/invariantesConta.js)) |
+| **Auditoria no commit** | Hook de pre-commit roda um verificador estático (~1 s) e barra o commit se achar algo grave | Grave = vazar dado entre lojas, cobrar errado ou derrubar a operação |
+| **Testes** | `node:test` contra PostgreSQL real descartável; telas testadas com jsdom montando a página de verdade | Sem mock de banco: o que passa no teste passa no Postgres |
+| **Fiscal** | Serviço separado que monta, assina e transmite o XML; o sistema principal só envia o retrato da venda | O certificado do cliente não é guardado nem logado pelo sistema principal |
+| **Hospedagem** | Google Cloud Run + Cloud SQL + Cloud Storage | Tudo roda na nuvem; a única peça instalada na loja é o agente de impressão, opcional |
 
 ---
 
-## ✨ Funcionalidades
+## Números verificáveis
 
-- 📱 **Cardápio Digital Público:** PWA responsivo com carrinho, adicionais por item, opções obrigatórias customizáveis (ex: ponto da carne, tipo de queijo) e envio de confirmação para o WhatsApp da loja.
-- 🤵 **App do Garçom (Mobile-First):** Lançamento de pedidos direto na mesa com controle de comanda e exigência de senha de gerente para cancelamentos e estornos.
-- 🧑‍🍳 **KDS (Kitchen Display System) em Tempo Real:** Fila inteligente que direciona pedidos para a cozinha assim que confirmados, com separação automática de itens que não exigem preparo (bebidas).
-- 💰 **Controle Contábil de Caixa:** Abertura com troco inicial, suprimento, sangria, fechamento com conferência e trava no banco contra dupla abertura no mesmo dia de operação.
-- 📦 **Gestão de Estoque:** Controle de disponibilidade de itens do cardápio em tempo real e monitoramento de consumo.
-- 👥 **Gestão de Equipe & Permissões:** Controle granular de funções operacionais (administrador, gerente, garçom, atendente).
-- 🔍 **"Meus Pedidos":** Login simplificado apenas com o número de telefone (sem fricção de senha) para histórico de pedidos e recurso "pedir de novo".
-- 📈 **Painel de Analytics:** Monitoramento de faturamento, ticket médio, ranking de produtos mais vendidos e distribuição por método de pagamento.
-- 👑 **Painel SuperAdmin:** Gestão consolidada de todas as lojas contratantes, controle de MRR e bloqueio automático por inadimplência.
+Contados no repositório privado em 11/11/2026:
 
----
-
-## 🧩 Desafios de Engenharia Resolvidos (War Stories)
-
-Uma seleção de problemas reais encontrados e solucionados durante o desenvolvimento e a operação em produção:
-
-### 1. 🛡️ Isolamento Multi-Tenant Testado com Ataque Real
-> *Em vez de apenas confiar em code review, foi criado um teste automatizado de invasão.*
-- **O Desafio:** Garantir que um lojista jamais consiga acessar, modificar ou apagar registros de outro tenant.
-- **A Solução:** Um teste adversarial que faz login como o *Cliente A* e tenta forçar leitura/escrita de entidades pertencentes exclusivamente ao *Cliente B* em todas as rotas (cardápio, pedidos, caixa e analytics).
-- 📄 **Código:** [`excerpts/multiTenantIsolation.test.js`](excerpts/multiTenantIsolation.test.js)
-
-### 2. ⏰ Fuso Horário Brasil vs. UTC no "Dia Operacional" de Bar
-> *Bares e casas noturnas fecham às 4h ou 6h da manhã seguinte, não à meia-noite.*
-- **O Desafio:** No Cloud Run o processo roda em UTC, enquanto o bar opera em Brasília (UTC-3). O corte configurado para 6h da manhã acabava disparando às 3h da manhã locais.
-- **A Solução:** Implementação da função `getDataOperacao(horaCorte)` com deslocamento UTC-3 fixo e cálculo estrito no servidor (o frontend nunca define a data contábil de operação).
-- 📄 **Código:** [`excerpts/caixaService.js`](excerpts/caixaService.js)
-
-### 3. 🌐 Rate-Limit Dedicado por Rota vs. NAT de Wi-Fi Físico
-> *Em bares físicos, clientes e funcionários costumam compartilhar o mesmo IP público via Wi-Fi.*
-- **O Desafio:** Um rate-limit genérico bloqueava a conta administrativa do dono da loja após picos de consultas públicas de cardápio feitas pelos clientes no mesmo Wi-Fi.
-- **A Solução:** Separação estrita dos limitadores e janelas de tráfego entre a rota pública de consulta de pedidos e a rota de login administrativo.
-- 📄 **Código:** [`excerpts/rateLimit.js`](excerpts/rateLimit.js)
-
-### 4. 🪲 Corrupção de Dados com `ON CONFLICT DO NOTHING` sem Constraint
-- **O Desafio:** O PostgreSQL permite sintaticamente o uso de `ON CONFLICT DO NOTHING`, mas sem uma constraint `UNIQUE` correspondente a cláusula se torna um no-op silencioso, duplicando o estoque padrão a cada deploy.
-- **A Solução:** Deduplicação via migration transacional e criação da constraint `UNIQUE` no banco sem downtime.
-
-### 5. 📲 User Gesture em Redirecionamento do WhatsApp Mobile
-- **O Desafio:** Um bug que só ocorria no aplicativo móvel (e nunca no navegador desktop) causava falha ao tentar abrir o app do WhatsApp por redirecionamento assíncrono.
-- **A Solução:** O sistema operacional móvel exige um *User Gesture* explícito; corrigido substituindo a transição programática por uma ação direta disparada pelo toque do usuário.
-
----
-
-## 🧪 Testes Automatizados
-
-Suíte com **54 testes automatizados** executados diretamente pelo test runner nativo do Node.js:
-
-```bash
-# Execução da suíte de testes contra container descartável PostgreSQL
-node --test
-```
-
-**Escopo de cobertura:**
-- [x] Autenticação segura, hashes e expiração de sessão
-- [x] Rate-limiting contra ataques de força bruta
-- [x] Criação de pedidos com validação e recálculo de preço no backend
-- [x] Idempotência de transações
-- [x] Ciclo completo de caixa (abertura, sangria, suprimento e fechamento)
-- [x] Testes de ataque e isolamento multi-tenant
-
----
-
-## 📅 Linha do Tempo Real (28 a 30 de agosto de 2026)
-
-| Período | Marcos de Entrega |
+| Item | Quantidade |
 |---|---|
-| **Dia 1** | Arquitetura multi-tenant, autenticação, cardápio digital, upload de fotos com deduplicação e configuração de domínio próprio. |
-| **Dia 2** | Comanda mobile do garçom, controle de mesas, esteira KDS em tempo real, fechamento contábil de caixa e analytics. |
-| **Dia 3** | Auditoria de segurança, mitigação de XSS/credenciais, testes de ataque multi-tenant, suíte de 54 testes e **deploy oficial em produção para o primeiro cliente pagante**. |
+| Migrations SQL (idempotentes, numeradas até 332) | **268** arquivos |
+| Arquivos de teste (`tests/*.test.js`) | **728** |
+| Casos de teste (`test(...)` / `it(...)`) | **~4.350** |
+| Deploys com registro escrito (data, revisão, plano de volta) | **mais de 260** |
+| Commits | **~1.800** |
+| Dependências de produção | **4** (`pg`, `@google-cloud/storage`, `fast-xml-parser`, `qrcode`) |
 
 ---
 
-## 👤 Autor
+## Desafios de engenharia
 
-<table align="center">
-  <tr>
-    <td align="center">
-      <b>Idarlan Magalhães</b><br/>
-      <i>Desenvolvedor de Software • IA, Automação & Arquitetura Web</i>
-      <br/><br/>
-      <a href="https://github.com/idarlandias">
-        <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-      </a>
-      <a href="https://www.linkedin.com/in/idarlandias/">
-        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
-      </a>
-    </td>
-  </tr>
-</table>
+1. **Isolamento multi-tenant testado com ataque.** Um teste adversarial loga como a loja A e tenta ler, editar, apagar e mudar status de registros da loja B. → [`excerpts/multiTenantIsolation.test.js`](excerpts/multiTenantIsolation.test.js)
+2. **"Dia operacional" de bar.** Bar fecha às 4h; o servidor roda em UTC e a loja em UTC-3. A data contábil é calculada só no servidor, com hora de corte por loja. → [`excerpts/caixaService.js`](excerpts/caixaService.js)
+3. **Rate limit vs. Wi-Fi compartilhado.** Clientes e funcionários saem pelo mesmo IP do bar; limitadores separados por rota evitam que o cardápio público bloqueie o login do dono. → [`excerpts/rateLimit.js`](excerpts/rateLimit.js)
+4. **Dois clientes, mesmo horário.** Agendamento serializado por loja, pedido repetido por sinal fraco reconhecido e constraint de exclusão como rede final. → [`excerpts/agendamentoSemConflito.js`](excerpts/agendamentoSemConflito.js)
+5. **Dinheiro que não fecha sem dar erro.** Dez invariantes de conta, cada uma nascida de um defeito real (pagamentos parciais simultâneos, pedido cancelado que "ressuscita", conta aberta em mesa livre), conferidas em modo somente leitura. → [`excerpts/invariantesConta.js`](excerpts/invariantesConta.js)
+6. **`ON CONFLICT DO NOTHING` sem constraint.** Sem `UNIQUE` correspondente, a cláusula não faz nada e o seed duplicava a cada deploy. Corrigido com deduplicação transacional e criação da constraint.
+7. **Histórico de outro sistema sem contaminar o caixa.** A importação grava em tabelas próprias, substitui em vez de duplicar ao reimportar e só aparece na Gestão e nos relatórios quando o lojista pede.
 
 ---
 
-<div align="center">
-  <sub>Construído com foco em simplicidade, segurança e alta performance operacional.</sub>
-</div>
+## Stack
+
+- **Backend:** Node.js (`http` nativo), PostgreSQL via `pg`, SQL puro
+- **Frontend:** HTML/CSS/JavaScript sem framework, mobile-first, PWA no cardápio
+- **Infra:** Google Cloud Run, Cloud SQL, Cloud Storage, Secret Manager, Docker
+- **IA:** Gemini (visão para leitura de cupom de compra; resumo no assistente de suporte), ligada por configuração
+- **Integrações:** Web Push sem biblioteca, impressão térmica ESC/POS por agente local, WhatsApp (links e webhook da API oficial), login Google para clientes
+- **Qualidade:** `node:test`, jsdom, hooks de pre-commit e pre-push, registro de deploys com plano de volta
+
+---
+
+## Autor
+
+**Idarlan Magalhães** — desenvolvedor de software (IA, automação e arquitetura web)
+
+[GitHub](https://github.com/idarlandias) · [LinkedIn](https://www.linkedin.com/in/idarlandias/)
