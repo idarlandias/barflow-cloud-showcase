@@ -1,5 +1,5 @@
-// Trecho extraído do BarFlow Cloud (src/auth/rateLimit.js) — imports relativos ao
-// repositório completo, privado. Ver README do showcase pro contexto.
+// Trecho extraído do núcleo privado do Flow Ecossistema (src/auth/rateLimit.js) — imports relativos ao
+// repositório completo, privado. Ver o README desta vitrine pro contexto.
 const db = require('../db');
 const config = require('../config');
 

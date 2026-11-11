@@ -1,6 +1,32 @@
 # FlowPDV — loja de varejo e loja de celular
 
-Frente de caixa e retaguarda para varejo, sobre o mesmo núcleo multi-tenant do BarFlow. Abre em endereço próprio e é habilitada por configuração. É a frente mais nova: está em implantação com as primeiras lojas, e parte dos módulos abaixo foi concluída nas últimas semanas. Plano de referência no código: R$ 99,90/mês.
+> **In English:** FlowPDV is the retail product of Flow Ecosystem: a full-screen point of sale with barcode support, products with variants, weighted-average-cost inventory, 12 reports, a management dashboard (P&L, COGS, break-even) and an online storefront. Brazilian e-invoicing (NFC-e and NF-e) is implemented and in certification with state tax authorities. Screenshots below show live storefronts and the back office with demo data.
+
+Frente de caixa e retaguarda para varejo, sobre o mesmo núcleo multi-tenant do Flow Ecossistema. Abre em endereço próprio e é habilitada por configuração. É a frente mais nova: está em implantação com as primeiras lojas, e parte dos módulos abaixo foi concluída nas últimas semanas. Plano de referência no código: R$ 99,90/mês.
+
+## Telas
+
+As telas públicas são de lojas reais em produção, com autorização do dono (nome, logo, cardápio e preços públicos); telefone, endereço e foto de pessoa aparecem desfocados. As telas internas exigem login e foram tiradas de lojas de demonstração num servidor local, com **dados de demonstração** (nomes como "Sushi Demo" e "Cliente Exemplo" são fictícios).
+
+### Públicas — vitrines de lojas reais
+
+| Emporium do Confeiteiro (varejo de confeitaria) — celular | Limocell (celulares e acessórios) — celular |
+|---|---|
+| <img src="screenshots/flowpdv-vitrine-varejo-confeitaria-celular.jpg" width="230" alt="Emporium do Confeiteiro (varejo de confeitaria) — celular" /> | <img src="screenshots/flowpdv-vitrine-loja-de-celular-celular.jpg" width="230" alt="Limocell (celulares e acessórios) — celular" /> |
+
+| Emporium do Confeiteiro — computador | Limocell — computador |
+|---|---|
+| <img src="screenshots/flowpdv-vitrine-varejo-confeitaria-desktop.jpg" width="380" alt="Emporium do Confeiteiro — computador" /> | <img src="screenshots/flowpdv-vitrine-loja-de-celular-desktop.jpg" width="380" alt="Limocell — computador" /> |
+
+### Internas — loja de demonstração "Empório Demo" (dados de demonstração)
+
+| PDV em tela cheia com venda em andamento | Estoque com custo médio e código de barras |
+|---|---|
+| <img src="screenshots/flowpdv-demo-pdv-caixa-desktop.jpg" width="380" alt="PDV em tela cheia com venda em andamento" /> | <img src="screenshots/flowpdv-demo-estoque-desktop.jpg" width="380" alt="Estoque com custo médio e código de barras" /> |
+
+| Gestão — DRE com CMV pelo custo médio | Relatórios — resumo do período e abas (curva ABC, margem, pico) |
+|---|---|
+| <img src="screenshots/flowpdv-demo-gestao-desktop.jpg" width="380" alt="Gestão — DRE com CMV pelo custo médio" /> | <img src="screenshots/flowpdv-demo-relatorios-desktop.jpg" width="380" alt="Relatórios — resumo do período e abas (curva ABC, margem, pico)" /> |
 
 ## PDV (frente de caixa)
 

@@ -1,6 +1,32 @@
 # BarFlow — bar, restaurante, lanchonete e confeitaria
 
-O BarFlow é a frente original da plataforma: atende o salão, o balcão, a cozinha e o escritório de um estabelecimento de comida. Abaixo, o que o código faz hoje, agrupado por módulo. Tudo é multi-tenant: cada consulta é filtrada pela loja do usuário logado.
+> **In English:** BarFlow is the food-service product of Flow Ecosystem: digital menu with table QR codes, waiter app, kitchen display, cash register with daily close, recipe-based inventory and a management dashboard (P&L, COGS, contribution margin, break-even, ABC analysis). Screenshots below show a live merchant's public menu and back-office screens with demo data.
+
+O BarFlow é o produto original do Flow Ecossistema: atende o salão, o balcão, a cozinha e o escritório de um estabelecimento de comida. Abaixo, o que o código faz hoje, agrupado por módulo. Tudo é multi-tenant: cada consulta é filtrada pela loja do usuário logado.
+
+## Telas
+
+As telas públicas são de lojas reais em produção, com autorização do dono (nome, logo, cardápio e preços públicos); telefone, endereço e foto de pessoa aparecem desfocados. As telas internas exigem login e foram tiradas de lojas de demonstração num servidor local, com **dados de demonstração** (nomes como "Sushi Demo" e "Cliente Exemplo" são fictícios).
+
+### Públicas — Hikaya Sushi Bar e Temakaria (loja real)
+
+| Cardápio digital no celular — topo e novidades | Cardápio digital no celular — categoria Uramaki | Cardápio digital no computador |
+|---|---|---|
+| <img src="screenshots/barflow-cardapio-sushiteria-celular.jpg" width="230" alt="Cardápio digital no celular — topo e novidades" /> | <img src="screenshots/barflow-cardapio-sushiteria-categoria-celular.jpg" width="230" alt="Cardápio digital no celular — categoria Uramaki" /> | <img src="screenshots/barflow-cardapio-sushiteria-desktop.jpg" width="380" alt="Cardápio digital no computador" /> |
+
+### Internas — loja de demonstração "Sushi Demo" (dados de demonstração)
+
+| App do garçom — mapa de mesas | App do garçom — pedidos na cozinha | Cozinha (KDS) — fila em tempo real |
+|---|---|---|
+| <img src="screenshots/barflow-demo-garcom-mesas-celular.jpg" width="230" alt="App do garçom — mapa de mesas" /> | <img src="screenshots/barflow-demo-garcom-kds-celular.jpg" width="230" alt="App do garçom — pedidos na cozinha" /> | <img src="screenshots/barflow-demo-kds-cozinha-desktop.jpg" width="380" alt="Cozinha (KDS) — fila em tempo real" /> |
+
+| Caixa do dia — mesas abertas e formas de pagamento | Estoque e insumos com alerta de reposição |
+|---|---|
+| <img src="screenshots/barflow-demo-caixa-desktop.jpg" width="380" alt="Caixa do dia — mesas abertas e formas de pagamento" /> | <img src="screenshots/barflow-demo-estoque-desktop.jpg" width="380" alt="Estoque e insumos com alerta de reposição" /> |
+
+| Gestão — DRE gerencial, margem e ponto de equilíbrio | Cardápio no painel — produtos com baixa de estoque pela ficha técnica |
+|---|---|
+| <img src="screenshots/barflow-demo-gestao-dre-desktop.jpg" width="380" alt="Gestão — DRE gerencial, margem e ponto de equilíbrio" /> | <img src="screenshots/barflow-demo-cardapio-admin-desktop.jpg" width="380" alt="Cardápio no painel — produtos com baixa de estoque pela ficha técnica" /> |
 
 ## Segmentos
 

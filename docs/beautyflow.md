@@ -1,6 +1,28 @@
 # BeautyFlow — salão de beleza e barbearia
 
-Agenda online dentro do mesmo núcleo do BarFlow: a loja é do tipo salão, com marca, cores e fotos próprias. Plano de referência no código: R$ 59,90/mês.
+> **In English:** BeautyFlow is the salon and barbershop product of Flow Ecosystem: a public booking page where clients pick a service, day and free time slot on their own, conflict-free scheduling enforced in the database, a daily agenda for the staff and salon financials. Screenshots below show live booking pages and the back office with demo data.
+
+Agenda online do Flow Ecossistema, no mesmo núcleo do BarFlow e do FlowPDV: a loja é do tipo salão, com marca, cores e fotos próprias. Plano de referência no código: R$ 59,90/mês.
+
+## Telas
+
+As telas públicas são de lojas reais em produção, com autorização do dono (nome, logo, cardápio e preços públicos); telefone, endereço e foto de pessoa aparecem desfocados. As telas internas exigem login e foram tiradas de lojas de demonstração num servidor local, com **dados de demonstração** (nomes como "Sushi Demo" e "Cliente Exemplo" são fictícios).
+
+### Públicas — agenda online de um salão e de uma barbearia (lojas reais)
+
+| Salão — escolha do serviço | Salão — escolha do dia e do horário livre | Salão — agenda no computador |
+|---|---|---|
+| <img src="screenshots/beautyflow-agenda-salao-servicos-celular.jpg" width="230" alt="Salão — escolha do serviço" /> | <img src="screenshots/beautyflow-agenda-salao-horarios-celular.jpg" width="230" alt="Salão — escolha do dia e do horário livre" /> | <img src="screenshots/beautyflow-agenda-salao-desktop.jpg" width="380" alt="Salão — agenda no computador" /> |
+
+| Barbearia — escolha do serviço | Barbearia — escolha do dia e do horário livre | Barbearia — agenda no computador |
+|---|---|---|
+| <img src="screenshots/beautyflow-agenda-barbearia-servicos-celular.jpg" width="230" alt="Barbearia — escolha do serviço" /> | <img src="screenshots/beautyflow-agenda-barbearia-horarios-celular.jpg" width="230" alt="Barbearia — escolha do dia e do horário livre" /> | <img src="screenshots/beautyflow-agenda-barbearia-desktop.jpg" width="380" alt="Barbearia — agenda no computador" /> |
+
+### Internas — "Salão Demo" e "Barbearia Demo" (dados de demonstração)
+
+| Painel do dia do salão (celular) | Painel do dia da barbearia (celular) | Painel do dia do salão (computador) |
+|---|---|---|
+| <img src="screenshots/beautyflow-demo-painel-salao-celular.jpg" width="230" alt="Painel do dia do salão (celular)" /> | <img src="screenshots/beautyflow-demo-painel-barbearia-celular.jpg" width="230" alt="Painel do dia da barbearia (celular)" /> | <img src="screenshots/beautyflow-demo-painel-salao-desktop.jpg" width="380" alt="Painel do dia do salão (computador)" /> |
 
 ## Agenda pública (cliente)
 

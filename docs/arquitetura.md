@@ -1,8 +1,10 @@
 # Arquitetura
 
+> **In English:** one Node.js service (native `http`, no framework) serves all three Flow Ecosystem products — BarFlow, BeautyFlow and FlowPDV — from a single PostgreSQL database with tenant isolation on every query, row-level locks per tenant for money and scheduling, idempotent migrations applied on every boot, tests against a real database and a pre-commit audit gate. Hosted on Google Cloud Run and Cloud SQL.
+
 ## Um serviço, três produtos
 
-Um único servidor Node.js atende o BarFlow, o BeautyFlow e o FlowPDV. Cada produto responde no próprio endereço (o host da requisição decide qual produto abre), com marca e telas próprias, mas todos compartilham:
+Um único servidor Node.js atende os três produtos do Flow Ecossistema: BarFlow, BeautyFlow e FlowPDV. Cada produto responde no próprio endereço (o host da requisição decide qual produto abre), com marca e telas próprias, mas todos compartilham:
 
 - autenticação e permissões por usuário, conferidas no servidor por rota;
 - o banco PostgreSQL, com `loja_id` em toda tabela de dados de loja;
