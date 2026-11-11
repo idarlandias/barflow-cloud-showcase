@@ -1,5 +1,5 @@
-// Trecho extraído do BarFlow Cloud (tests/fase7_isolamento_multitenant.test.js) — imports
-// relativos ao repositório completo, privado. Ver README do showcase pro contexto.
+// Trecho extraído do núcleo privado do Flow Ecossistema (tests/fase7_isolamento_multitenant.test.js) — imports
+// relativos ao repositório completo, privado. Ver o README desta vitrine pro contexto.
 //
 // Fase 7 (item 6 do roadmap, 30/08/2026): teste de invasão real de isolamento multi-tenant.
 // Cria uma segunda loja de verdade no banco e tenta, com o token válido da Loja A, ler/
